@@ -1,0 +1,49 @@
+ul.navbar {
+  position: absolute;
+  top: 30px;
+  left: 900px;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 2;
+
+}
+
+li.navbar {
+  float: left;
+}
+
+li.navbar a.navbar {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.navbar a.navbar:hover {
+  background-color: #111;
+}
+.imagemHome {
+  left: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+
+}
+.logo {
+  left: 20px;
+  top: 20px;
+  position: absolute;
+  z-index: 2;
+
+}
+header{
+  position: relative;
+}
+.boxText{
+
+}
