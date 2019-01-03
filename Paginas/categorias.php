@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
   <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="categorias.css">
     <meta charset="utf-8">
-	<meta name="author" content="Daniel Mata, Guilherme Lopes">
-	<meta name="keywords" content="eventos, Covilhã, festas, cultura, lazer, aventura, conhecimento, neve, universidade, cidade, pelourinho, arte urbana, festejo, lanifícios">
-	<meta name="description" content="Website de promoção dos eventos da Covilhã e para fornecer ao público toda a informação acerca dos eventos da cidade.">
-	<meta name="creation_date" content="02/01/2019">
-	<meta name="contactNetworkAdress" content="daniel.mata@ubi.pt;guilherme.breia.lopes@ubi.pt">
-	<link rel="shortcut icon" href="imagens/eventos.ico">
     <style media="screen">
+    .centerTable { margin: 0px auto; }
       li.navbar a.navbar {
         display: block;
         color: black;
@@ -28,8 +24,8 @@
   <body>
 <header>
 
-  <img class="imagemHome" src="imagens/header3.jpg" alt="Vista para a Serra da Estrela" width="1550" >
-  <img class="logo" src="imagens/logo.png" alt="logotipo" >
+  <img class="imagemHome" src="imagens/header3.jpg" alt="" width="1550" >
+  <img class="logo" src="imagens/logo.png" alt="" >
   <ul class="navbar">
     <li class="navbar" ><a class="navbar" href="inicio.html"><b>INICIO</b></a></li>
     <li class="navbar"><a class="navbar" href="calendario.html"><b>CALENDARIO</b></a></li>
@@ -38,10 +34,18 @@
     <li class="navbar"><a class="navbar" href="contactos.html"><b>CONTACTOS</b></a></li>
   </ul>
 </header>
+<?php
+$servername = "sql106.epizy.com";
+$username = "epiz_23220210";
+$password = "eBxNo7qICN";
+$dbname = "epiz_23220210_eventos";
 
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+?>
 <div class="dropdown">
 <label for="categoriaSel"> Selecione uma categoria para procurar por eventos:</label><br>
-<form method="post" action="selCategoria.php">
+<form method="post">
 <select class="dropbtn" name="categoriaSel">Dropdown</button>
   <div id="myDropdown" class="dropdown-content">
   <option value="Artes">Artes</option>
@@ -55,12 +59,39 @@
 </form>
   </div>
 </div>
-<article class="frameGet">
+<?php
+$select = $_POST['categoriaSel'];
+$sql = "SELECT `id` ,`nome` , `data`, `descricao`, `preco` , `localizacao`, `hora` ,`categoria` ,`imagem` FROM `eventos` WHERE categoria ='$select'";
+$result = $conn->query($sql);
+?>
+<table class="centerTable"  style="width:100%; border: 2px solid black; vertical-align: bottom;">
+  <tr>
+    <th align="left">NOME</th>
+    <th align="left">DATA</th>
+    <th align="left">PRECO</th>
+    <th align="left">HORA</th>
+    <th align="left">FOTO</th>
 
-</article>
-<footer>
-<p> A construção do website tem como propósito de reunir os eventos da cidade da Covilhã e localidades vizinhas de forma a proporcionar informação clara e de fácil acesso, para assim servir o público. </p>
-</footer>
+  </tr>
+<?php
+while($row = $result->fetch_assoc()){
+   $imagem= $row['imagem'];
+    echo"
+        <tr>
+        <td>{$row['nome']}</td>
+        <td>{$row['data']}</td>
+        <td>{$row['preco']}€</td>
+        <td>{$row['hora']}</td>
+
+        <td><img src='$imagem'height='100' width='100'></td>
+
+        </tr>";
+}
+?>
+</table>
 
   </body>
+  <footer>
+<p> A construção do website tem como propósito de reunir os eventos da cidade da Covilhã e localidades vizinhas de forma a proporcionar informação clara e de fácil acesso, para assim servir o público. </p>
+</footer>
 </html>
