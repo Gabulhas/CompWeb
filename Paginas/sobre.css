@@ -3,5 +3,8 @@ li.navbar a.navbar {
   color: black;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: none; 
 }
+footer{
+position: absolute;
+bottom: 0;}

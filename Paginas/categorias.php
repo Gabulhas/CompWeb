@@ -81,6 +81,7 @@ while($row = $result->fetch_assoc()){
         <td>{$row['nome']}</td>
         <td>{$row['data']}</td>
         <td>{$row['preco']}€</td>
+		<p>$
         <td>{$row['hora']}</td>
 
         <td><img src='$imagem'height='100' width='100'></td>
