@@ -92,7 +92,7 @@ while($row = $result->fetch_assoc()){
 </table>
 
   </body>
-  <footer>
+<footer>
 <p> A construção do website tem como propósito de reunir os eventos da cidade da Covilhã e localidades vizinhas de forma a proporcionar informação clara e de fácil acesso, para assim servir o público. </p>
 </footer>
 </html>
