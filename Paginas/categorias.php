@@ -26,13 +26,30 @@
 
   <img class="imagemHome" src="imagens/header3.jpg" alt="" width="1550" >
   <img class="logo" src="imagens/logo.png" alt="" >
-  <ul class="navbar">
-    <li class="navbar" ><a class="navbar" href="inicio.html"><b>INICIO</b></a></li>
-    <li class="navbar"><a class="navbar" href="calendario.html"><b>CALENDARIO</b></a></li>
-    <li class="navbar"><a  class="navbar" href="categorias.php"><b>CATEGORIAS</b></a></li>
-    <li class="navbar"><a class="navbar" href="sobre.html"><b>SOBRE</b></a></li>
-    <li class="navbar"><a class="navbar" href="contactos.html"><b>CONTACTOS</b></a></li>
-  </ul>
+  <div class="topnav" id="myTopnav">
+<a href="inicio.html">INICIO</a>
+<div class="dropdown">
+  <button class="dropbtn">EVENTOS
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="categorias.php">Categorias</a>
+    <a href="#">Procurar Por Data</a>
+    <a href="#">Todos</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">INFORMAÇÔES
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="sobre.html">Sobre</a>
+    <a href="contactos.html">Contatos</a>
+    <a href="#">Todos</a>
+  </div>
+</div>
+<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
 </header>
 <?php
 $servername = "sql106.epizy.com";
@@ -71,21 +88,21 @@ $result = $conn->query($sql);
     <th align="left">PRECO</th>
     <th align="left">HORA</th>
     <th align="left">FOTO</th>
+    <th align="left">MAIS</th>
 
   </tr>
 <?php
 while($row = $result->fetch_assoc()){
    $imagem= $row['imagem'];
+   $id= $row['id'];
     echo"
         <tr>
         <td>{$row['nome']}</td>
         <td>{$row['data']}</td>
         <td>{$row['preco']}€</td>
-		<p>$
         <td>{$row['hora']}</td>
-
         <td><img src='$imagem'height='100' width='100'></td>
-
+        <td><a href='http://covilha-eventos.cf/evento.php?id=$id'>MAIS</a></td>
         </tr>";
 }
 ?>

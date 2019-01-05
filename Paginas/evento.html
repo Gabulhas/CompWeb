@@ -39,8 +39,14 @@
   </ul>
 </header>
 <article class="eventoBox">
-  <h1>AVA</h1>
+  <h1>$nome</h1>
+  <h2>{$row['data']} -{$row['hora']}</h2>
+  <h3>{$row['preco']}€</h3>
+  <h3>{$row['categoria']}</h3>
+  <article style='height:500px;float:left;width:60%;overflow:hidden;'>$descricao</article>
 
+  <img src='$imagem' style='margin-left: 700px;right:10px; top: auto;'>
+  <iframe src='$localizacao' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
 
 </article>
 
