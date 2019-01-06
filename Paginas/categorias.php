@@ -5,20 +5,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="categorias.css">
     <meta charset="utf-8">
-    <style media="screen">
-    .centerTable { margin: 0px auto; }
-      li.navbar a.navbar {
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      li.navbar a.navbar:hover {
-        color:white;
-
-      }
-    </style>
     <title></title>
   </head>
   <body>
@@ -27,18 +13,18 @@
   <img class="imagemHome" src="imagens/header3.jpg" alt="" width="1550" >
   <img class="logo" src="imagens/logo.png" alt="" >
   <div class="topnav" id="myTopnav">
-<a href="inicio.html">INICIO</a>
-<div class="dropdown">
+  <a href="inicio.html">INICIO</a>
+  <div class="dropdown">
   <button class="dropbtn">EVENTOS
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content">
     <a href="categorias.php">Categorias</a>
-    <a href="#">Procurar Por Data</a>
-    <a href="#">Todos</a>
+    <a href="data.php">Procurar Por Data</a>
+    <a href="todos.php">Todos</a>
   </div>
-</div>
-<div class="dropdown">
+  </div>
+  <div class="dropdown">
   <button class="dropbtn">INFORMAÇÔES
     <i class="fa fa-caret-down"></i>
   </button>
@@ -46,9 +32,9 @@
     <a href="sobre.html">Sobre</a>
     <a href="contactos.html">Contatos</a>
   </div>
-</div>
-<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+  </div>
+
+  </div>
 </header>
 <?php
 $servername = "sql106.epizy.com";

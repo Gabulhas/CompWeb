@@ -10,53 +10,70 @@
 	<meta name="creation_date" content="02/01/2019">
 	<meta name="contactNetworkAdress" content="daniel.mata@ubi.pt;guilherme.breia.lopes@ubi.pt">
 	<link rel="shortcut icon" href="imagens/eventos.ico">
-    <style media="screen">
-      li.navbar a.navbar {
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      li.navbar a.navbar:hover {
-        color:white;
 
-      }
-    </style>
     <title></title>
   </head>
   <body>
 <header>
+<?php
+$servername = "sql106.epizy.com";
+$username = "epiz_23220210";
+$password = "eBxNo7qICN";
+$dbname = "epiz_23220210_eventos";
 
-  <img class="imagemHome" src="imagens/header4.jpg" alt="edifício" width="1550" >
-  <img class="logo" src="imagens/logo.png" alt="logotipo">
-  <div class="dropdown">
-    <button class="dropbtn">EVENTOS
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="categorias.php">Categorias</a>
-      <a href="#">Procurar Por Data</a>
-      <a href="#">Todos</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">INFORMAÇÔES
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="sobre.html">Sobre</a>
-      <a href="contactos.html">Contatos</a>
-    </div>
-  </div>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-</header>
 
-	</div>
-<footer>
-<p> A construção do website tem como propósito de reunir os eventos da cidade da Covilhã e localidades vizinhas de forma a proporcionar informação clara e de fácil acesso, para assim servir o público. </p>
-</footer>
+$conn = new mysqli($servername, $username, $password, $dbname);
+?>
+<div class="topnav" id="myTopnav">
+<a href="inicio.html">INICIO</a>
+<div class="dropdown">
+<button class="dropbtn">EVENTOS
+  <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+  <a href="categorias.php">Categorias</a>
+  <a href="data.php">Procurar Por Data</a>
+  <a href="todos.php">Todos</a>
+</div>
+</div>
+<div class="dropdown">
+<button class="dropbtn">INFORMAÇÔES
+  <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+  <a href="sobre.html">Sobre</a>
+  <a href="contactos.html">Contatos</a>
+</div>
+</div>
+
+</div>
+<?php
+
+$select = $_GET['id'];
+$sql = "SELECT `id` ,`nome` , `data`, `descricao`, `preco` , `localizacao`, `hora` ,`categoria` ,`imagem` FROM `eventos` WHERE id ='$select'";
+$result = $conn->query($sql);
+?>
+
+<article class="eventoBox">
+<?php
+while($row = $result->fetch_assoc()){
+   $imagem= $row['imagem'];
+   $id= $row['id'];
+   $nome =utf8_encode($row['nome']);
+   $localizacao =$row['localizacao'];
+   $descricao =utf8_encode($row['descricao']);
+echo "
+  <h1>$nome</h1>
+  <h2>{$row['data']} -{$row['hora']}</h2>
+  <h3>{$row['preco']}€</h3>
+  <h3>{$row['categoria']}</h3>
+  <article style='height:500px;float:left;width:60%;overflow:hidden;'>$descricao</article>
+
+  <img src='$imagem' style='margin-left: 700px;right:10px; top: auto;'>
+  <iframe src='$localizacao' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>
+  ";}?>
+?>
+</article>
 
   </body>
 </html>
