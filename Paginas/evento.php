@@ -30,30 +30,27 @@
 
   <img class="imagemHome" src="imagens/header4.jpg" alt="edifício" width="1550" >
   <img class="logo" src="imagens/logo.png" alt="logotipo">
-  <div class="topnav" id="myTopnav">
-<a href="inicio.html">INICIO</a>
-<div class="dropdown">
-  <button class="dropbtn">EVENTOS
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content">
-    <a href="categorias.php">Categorias</a>
-    <a href="#">Procurar Por Data</a>
-    <a href="#">Todos</a>
+  <div class="dropdown">
+    <button class="dropbtn">EVENTOS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="categorias.php">Categorias</a>
+      <a href="#">Procurar Por Data</a>
+      <a href="#">Todos</a>
+    </div>
   </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn">INFORMAÇÔES
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content">
-    <a href="sobre.html">Sobre</a>
-    <a href="contactos.html">Contatos</a>
-    <a href="#">Todos</a>
+  <div class="dropdown">
+    <button class="dropbtn">INFORMAÇÔES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contatos</a>
+    </div>
   </div>
-</div>
-<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
 </header>
 
 	</div>
