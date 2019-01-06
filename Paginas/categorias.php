@@ -28,21 +28,21 @@
   <img class="logo" src="imagens/logo.png" alt="" >
   <div class="topnav" id="myTopnav">
 <a href="inicio.html">INICIO</a>
-<div class="dropdown">
-  <button class="dropbtn">EVENTOS
+<div class="drp">
+  <button class="drn">EVENTOS
     <i class="fa fa-caret-down"></i>
   </button>
-  <div class="dropdown-content">
+  <div class="drp-content">
     <a href="categorias.php">Categorias</a>
     <a href="#">Procurar Por Data</a>
     <a href="#">Todos</a>
   </div>
 </div>
-<div class="dropdown">
-  <button class="dropbtn">INFORMAÇÔES
+<div class="drp">
+  <button class="drn">INFORMAÇÔES
     <i class="fa fa-caret-down"></i>
   </button>
-  <div class="dropdown-content">
+  <div class="drp-content">
     <a href="sobre.html">Sobre</a>
     <a href="contactos.html">Contatos</a>
     <a href="#">Todos</a>
@@ -60,11 +60,11 @@ $dbname = "epiz_23220210_eventos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
-<div class="dropdown">
+<div class="drp">
 <label for="categoriaSel"> Selecione uma categoria para procurar por eventos:</label><br>
 <form method="post">
-<select class="dropbtn" name="categoriaSel">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
+<select class="drn" name="categoriaSel">drp</button>
+  <div id="mydrp" class="drp-content">
   <option value="Artes">Artes</option>
   <option value="Musica">Musica</option>
   <option value="Noite">Noite</option>

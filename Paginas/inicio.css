@@ -1,3 +1,6 @@
+
+
+@media (min-width: 1281px) {
 <<<<<<< Updated upstream
 =======
 
@@ -20,12 +23,12 @@ ul.boxText li{
 }
 div#firstBoxText{
   float:left;
-  width:40%;
+  width:50%;
  overflow:hidden;
 }
 div#firstBoxImage {
-  margin-left: 700px;
-  right:10px;
+  margin-left: 50%;
+
   top: auto;
 
 }
@@ -33,21 +36,75 @@ div.secBox{
   margin-top: 5%;
 }
 div#secBoxText{
-  margin-left: 700px;
-  right:10px;
+  margin-left: 50%;
   top: auto;
 
 }
 div#secBoxImage {
   float:left;
-  width:40%;
+  width:50%;
  overflow:hidden;
 
 }
-footer{
 
-  height: 40px;
-  color: white;
-  text-align: center;
-  background-color:#262C66;
+
+
+
 }
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  body{
+    background-color: #172D51;
+  }
+
+  >>>>>>> Stashed changes
+  ul.boxText{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin: auto;
+    padding: 10px;
+    height: 500px;
+  }
+  ul.boxText li{
+    display: inline-block;
+  }
+  div#firstBoxText{
+    float:left;
+    width:50%;
+   overflow:hidden;
+  }
+  div#firstBoxImage {
+    margin-left: 50%;
+
+    top: auto;
+
+  }
+  .secondTitle{
+    margin-left: 50%;
+    align-self: center;
+  }
+  div.secBox{
+    margin-top: 5%;
+  }
+  div#secBoxText{
+
+    top: auto;
+
+  }
+  div#secBoxImage {
+    float:left;
+    width:50%;
+   overflow:hidden;
+
+  }
+
+
+}
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
