@@ -2,7 +2,7 @@
 <html lang="pt" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="categorias.css">
     <meta charset="utf-8">
     <title></title>
@@ -68,7 +68,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <select class="drn" name="ano">drp</button>
   <div id="mydrp" class="drp-content">
   <option value="">ANO</option>
-   <option value="2018">2019</option
+   <option value="2018">2018</option
   <option value="2019">2019</option>
   <option value="2020">2020</option>
   <option value="2021">2021</option>
@@ -104,12 +104,12 @@ while($row = $result->fetch_assoc()){
    $id= $row['id'];
     echo"
         <tr>
-        <td>{$row['nome']}</td>
+        <td><a href='evento.php?id=$id' STYLE="TEXT-DECORATION: NONE">{$row['nome']}</a></td>
         <td>{$row['data']}</td>
         <td>{$row['preco']}€</td>
         <td>{$row['hora']}</td>
         <td><img src='$imagem'height='100' width='100'></td>
-        <td><a href='http://covilha-eventos.cf/evento.php?id=$id'>MAIS</a></td>
+        <td><a href='evento.php?id=$id'>MAIS</a></td>
         </tr>";
 }
 ?>

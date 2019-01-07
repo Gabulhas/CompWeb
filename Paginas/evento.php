@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="sobre.css">
     <meta charset="utf-8">
 	<meta name="author" content="Daniel Mata, Guilherme Lopes">
@@ -14,7 +14,9 @@
     <title></title>
   </head>
   <body>
-<header>
+<header>  
+<img class="imagemHome" src="imagens/header.png" alt="cidade de noite" >
+<img class="logo" src="imagens/logo.png" alt="logotipo" >
 <?php
 $servername = "sql106.epizy.com";
 $username = "epiz_23220210";
